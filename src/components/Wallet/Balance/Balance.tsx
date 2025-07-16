@@ -1,4 +1,7 @@
 import classes from './Balance.module.scss';
+import plusIcon from '/src/assets/icons/plus-icon.svg';
+import minusIcon from '/src/assets/icons/minus-icon.svg';
+import bigStar from '/src/assets/icons/big-yellow-star.svg';
 
 const Balance = () => {
 
@@ -8,15 +11,15 @@ const Balance = () => {
                 <span className={classes['balance-text']}>Ваш баланс</span>
                 <span className={classes['balance-count']}>
                     {4212..toLocaleString('ru-RU')}
-                    <img src="/src/assets/icons/big-yellow-star.svg" className={classes.star} alt="" />
+                    <img src={bigStar} className={classes.star} alt="" />
                 </span>
                 <div className={classes.buttons}>
                     <div className={[classes.button, classes.yellow].join(' ')}>
-                        <img className={classes.icon} src="/src/assets/icons/plus-icon.svg" alt="+" />
+                        <img className={classes.icon} src={plusIcon} alt="+" />
                         <span className={classes.wrapper}>Пополнить</span>
                     </div>
                     <button className={[classes.button, classes.gray].join(' ')}>
-                        <img className={classes.icon} src="/src/assets/icons/minus-icon.svg" alt="-" />
+                        <img className={classes.icon} src={minusIcon} alt="-" />
                         <span className={classes.wrapper}>Вывод</span>
                     </button>
                 </div>
