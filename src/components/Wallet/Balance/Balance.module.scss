@@ -51,6 +51,7 @@
             gap: 3px;
 
             .button {
+                cursor: pointer;
                 width: 100%;
                 border-radius: 16px;
                 height: 34px;
@@ -63,7 +64,7 @@
 
             .yellow {
                 color: $black-text;
-                background: linear-gradient(#D89D1E, #EAC824);
+                background: $yellow-gradient;
             }
 
             .gray {
