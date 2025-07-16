@@ -1,0 +1,33 @@
+@use '/src/styles/variables.scss' as *;
+
+.header {
+    padding: 0px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        font-size: 14px;
+        font-weight: 600;
+        color: $white-text;
+    }
+
+    .filter {
+        font-size: 10px;
+        font-weight: 400;
+        color: $white-inactive-transparent-text-60;
+        width: 93px;
+        height: 25px;
+        border-radius: 155px;
+        background-color: $third-background;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        .icon {
+            width: 10.1px;
+            height: 5.25px;
+        }
+    }
+}

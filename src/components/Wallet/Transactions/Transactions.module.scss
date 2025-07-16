@@ -1,0 +1,12 @@
+@use '/src/styles/variables.scss' as *;
+
+.transactions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 26px 9px;
+    background-color: $container-background;
+    border-radius: 20px;
+    border: 1px solid $super-transparent-white;
+}
