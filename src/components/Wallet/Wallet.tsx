@@ -7,7 +7,6 @@ const Wallet = () => {
     return (
         <div className={classes.container}>
             <Balance />
-
             <TransactionsBlock />
         </div>
     )
