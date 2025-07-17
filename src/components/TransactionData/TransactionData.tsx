@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { ITestData } from '../TransactionList';
+import { ITestData } from '../TransactionList/TransactionList';
 import classes from './TransactionData.module.scss';
-import TransactionItem from './TransactionItem/TransactionItem';
+import TransactionItem from '../TransactionItem/TransactionItem';
 
 interface TransactionDataProps {
     data: ITestData;

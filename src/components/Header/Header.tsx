@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classes from './Header.module.scss';
 import arrowBottomIcon from '/src/assets/icons/arrow-bottom-icon.svg';
 import { createPortal } from 'react-dom';
-import Filter from './Filter/Filter';
+import Filter from '../Filter/Filter';
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false);

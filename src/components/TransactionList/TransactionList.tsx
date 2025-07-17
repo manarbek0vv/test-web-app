@@ -1,4 +1,4 @@
-import TransactionData from './TransactionData/TransactionData';
+import TransactionData from '../TransactionData/TransactionData';
 import classes from './TransactionList.module.scss';
 
 export type ITransaction = {

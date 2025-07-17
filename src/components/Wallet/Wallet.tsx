@@ -1,5 +1,5 @@
-import Balance from './Balance/Balance';
-import Transactions from './Transactions/Transactions';
+import Balance from '../Balance/Balance';
+import TransactionsBlock from '../Transactions/Transactions';
 import classes from './Wallet.module.scss';
 
 const Wallet = () => {
@@ -8,7 +8,7 @@ const Wallet = () => {
         <div className={classes.container}>
             <Balance />
 
-            <Transactions />
+            <TransactionsBlock />
         </div>
     )
 }

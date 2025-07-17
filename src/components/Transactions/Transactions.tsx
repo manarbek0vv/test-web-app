@@ -1,8 +1,8 @@
-import Header from './Header/Header';
-import TransactionList from './TransactionList/TransactionList';
+import Header from '../Header/Header';
+import TransactionList from '../TransactionList/TransactionList';
 import classes from './Transactions.module.scss';
 
-const Transactions = () => {
+const TransactionsBlock = () => {
 
     return (
         <div className={classes.transactions}>
@@ -13,4 +13,4 @@ const Transactions = () => {
     )
 }
 
-export default Transactions
+export default TransactionsBlock
