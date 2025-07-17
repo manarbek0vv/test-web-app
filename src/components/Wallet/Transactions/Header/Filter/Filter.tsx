@@ -2,6 +2,7 @@ import { useState } from 'react';
 import classes from './Filter.module.scss';
 import checkboxMark from '/src/assets/icons/checkbox-mark.svg';
 import glass from '/src/assets/icons/glass.svg';
+import close from '/src/assets/icons/x-icon.svg';
 
 const filters = ['Пополнение', 'Вывод', 'Ставка в игре', "Выплата за игру", 'Комиссия', 'Транзакция отменена', 'Реферальная система', 'Промокод'];
 
@@ -22,7 +23,7 @@ const Filter = ({ setOpen }: { setOpen: React.Dispatch<React.SetStateAction<bool
             <div className={classes.container}>
                 <div className={classes.header}>
                     <span className={classes.title}>Фильтры</span>
-                    <img onClick={() => setOpen(prev => !prev)} src="/src/assets/icons/x-icon.svg" className={classes.close} alt="" />
+                    <img onClick={() => setOpen(prev => !prev)} src={close} className={classes.close} alt="" />
                 </div>
 
                 <div className={classes.search}>
