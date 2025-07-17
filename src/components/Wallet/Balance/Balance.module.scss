@@ -2,13 +2,10 @@
 
 .balance {
     width: 100%;
-    background: linear-gradient(0deg, #131313, #131313),
-        radial-gradient(156.02% 156.02% at -87.38% 197.62%, #FFD527 3.47%, rgba(19, 19, 19, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-        ,
-        radial-gradient(142.39% 163.64% at 192.39% 8.93%, #FFD527 3.47%, rgba(19, 19, 19, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
+    background:
+        radial-gradient(156.02% 156.02% at -87.38% 197.62%, #FFD527 3.47%, rgba(19, 19, 19, 0) 100%),
+        radial-gradient(142.39% 163.64% at 220% 8.93%, #FFD527 3.47%, rgba(19, 19, 19, 0) 100%);
+
     padding: 20px;
     border: 1px solid $super-transparent-white;
     border-radius: 20px;
