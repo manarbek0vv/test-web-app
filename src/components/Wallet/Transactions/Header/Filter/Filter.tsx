@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import classes from './Filter.module.scss';
+import checkboxMark from '/src/assets/icons/checkbox-mark.svg';
+import glass from '/src/assets/icons/glass.svg';
 
 const filters = ['Пополнение', 'Вывод', 'Ставка в игре', "Выплата за игру", 'Комиссия', 'Транзакция отменена', 'Реферальная система', 'Промокод'];
 
@@ -25,7 +27,7 @@ const Filter = ({ setOpen }: { setOpen: React.Dispatch<React.SetStateAction<bool
 
                 <div className={classes.search}>
                     <div className={classes['glass-wrapper']}>
-                        <img src="/src/assets/icons/glass.svg" className={classes.glass} alt="" />
+                        <img src={glass} className={classes.glass} alt="" />
                     </div>
                     <input value={value} onChange={(e) => setValue(e.target.value)} id='filter' placeholder='Поиск' className={classes.input} />
                 </div>
@@ -36,7 +38,7 @@ const Filter = ({ setOpen }: { setOpen: React.Dispatch<React.SetStateAction<bool
 
                         return <label className={classes.filter}>
                             <div className={[classes.checkbox, isActive && classes.active].join(' ')}>
-                                {isActive && <img src="/src/assets/icons/checkbox-mark.svg" alt="" />}
+                                {isActive && <img src={checkboxMark} alt="" />}
                                 <input onChange={() => changeActive(item)} checked={isActive} type="checkbox" className={classes['input']} />
                             </div>
 
