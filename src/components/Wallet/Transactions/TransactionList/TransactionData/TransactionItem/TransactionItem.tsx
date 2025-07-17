@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import classes from './TransactionItem.module.scss';
 import { ITransaction } from '../../TransactionList';
-
 import yellowStar from '/src/assets/icons/yellow-star.svg';
 import toy from '/src/assets/icons/toy.svg';
 import greenMark from '/src/assets/icons/green-mark.svg';

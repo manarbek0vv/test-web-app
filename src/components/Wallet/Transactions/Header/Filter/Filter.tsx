@@ -51,7 +51,7 @@ const Filter = ({ setOpen }: { setOpen: React.Dispatch<React.SetStateAction<bool
 
                 <div className={classes.buttons}>
                     <div onClick={() => setActiveFilters([])} className={[classes.button, classes.gray].join(' ')}>Clear all</div>
-                    <div className={[classes.button, classes.yellow].join(' ')}>Use filters (n)</div>
+                    <div className={[classes.button, classes.yellow].join(' ')}>Use filters ({ activeFilters.length })</div>
                 </div>
             </div>
         </div>
