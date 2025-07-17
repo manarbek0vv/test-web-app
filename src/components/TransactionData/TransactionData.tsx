@@ -15,7 +15,7 @@ const TransactionData: FC<TransactionDataProps> = ({ data }) => {
             <div className={classes.list}>
                 {
                     data.transactions.map(transaction =>
-                        <TransactionItem transaction={transaction} />
+                        <TransactionItem key={transaction.time} transaction={transaction} />
                     )
                 }
             </div>

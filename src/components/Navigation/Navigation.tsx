@@ -23,7 +23,7 @@ const Navigation = () => {
             <div className={classes.wrapper}>
                 <div className={classes.container}>
                     {navigationItems.map(({ title, Icon }) =>
-                        <div className={classes.item}>
+                        <div key={title} className={classes.item}>
                             <div className={classes['icon-wrapper']}>
                                 <Icon />
                             </div>

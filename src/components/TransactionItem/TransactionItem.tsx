@@ -4,7 +4,6 @@ import { ITransaction } from '../TransactionList/TransactionList';
 import yellowStar from '/src/assets/icons/yellow-star.svg';
 import toy from '/src/assets/icons/toy.svg';
 import greenMark from '/src/assets/icons/green-mark.svg';
-import waiting from '/src/assets/icons/waiting.svg';
 import error from '/src/assets/icons/error.svg';
 import greenStar from '/src/assets/icons/green-star.svg';
 import redStar from '/src/assets/icons/red-star.svg';
@@ -35,7 +34,7 @@ const TransactionItem: FC<TransactionItemProps> = ({ transaction }) => {
                             <img src={greenMark} className={classes.mark} alt="" />
                         )}
                         {transaction.status === 'waiting' && (
-                            <img src={waiting} className={classes.mark} alt="" />
+                            <div className={classes.loader} />
                         )}
                         {transaction.status === 'error' && (
                             <img src={error} className={classes.mark} alt="" />

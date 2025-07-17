@@ -39,7 +39,7 @@ const TransactionList = () => {
         <div className={classes['transactions-container']}>
             {
                 testData.map(data =>
-                    <TransactionData data={data} />
+                    <TransactionData key={data.date} data={data} />
                 )
             }
         </div>
