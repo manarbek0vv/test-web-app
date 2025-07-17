@@ -1,0 +1,62 @@
+@use '/src/styles/variables.scss' as *;
+
+.wrapper {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    left: 0;
+    right: 0;
+    justify-content: center;
+}
+
+.container {
+    width: 390px;
+    position: fixed;
+    height: 65px;
+    display: flex;
+    background-color: #212121;
+    padding: 14px 34px 11px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    cursor: pointer;
+    width: 53px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .icon-wrapper {
+        width: 27px;
+        height: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .title {
+        height: 13px;
+        font-size: 9px;
+        font-weight: 300;
+        letter-spacing: 0.06px;
+        line-height: 13px;
+        color: $white-text;
+        font-family: San Francisco/Caption 2/Semibold;
+    }
+}
+
+.active {
+    * {
+        fill: $yellow;
+    }
+
+    .title {
+        color: $yellow;
+    }
+}
