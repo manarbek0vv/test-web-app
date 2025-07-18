@@ -6,9 +6,7 @@ import Wallet from "./components/Wallet/Wallet"
 function App() {
 
   useEffect(() => {
-    // @ts-ignore
-    const telegram = window.Telegram.WebApp;
-    telegram.requestFullscreen();
+    Telegram.WebApp.requestFullscreen();
   }, [])
 
   return (

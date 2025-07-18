@@ -7,18 +7,14 @@
     align-items: center;
 
     .title {
-        font-size: 14px;
-        font-weight: 600;
         color: $white-text;
         white-space: nowrap;
     }
 
     .filter {
         cursor: pointer;
-        font-size: 10px;
-        font-weight: 400;
         color: $white-inactive-transparent-text-60;
-        width: 93px;
+        width: 85px;
         height: 25px;
         border-radius: 155px;
         background-color: $third-background;
@@ -26,10 +22,14 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
+        padding: 4px 10px;
+        overflow: hidden;
 
         .icon {
-            width: 10.1px;
-            height: 5.25px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-bottom: 1px;
         }
     }
 }

@@ -1,6 +1,6 @@
-@font-face {
+/* @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-ExtraLight.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -8,15 +8,15 @@
 
 @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-Light.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 @font-face {
-  font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-Regular.ttf') format('truetype');
+  font-family: 'Unbounded-regular';
+  src: url('/src/assets/fonts/Unbounded-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-Medium.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-SemiBold.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -40,15 +40,15 @@
 
 @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-Bold.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-ExtraBold.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -56,11 +56,11 @@
 
 @font-face {
   font-family: 'Unbounded';
-  src: url('/src/assets/fonts/Unbounded-Black.ttf') format('truetype');
+  src: url('/src/assets/fonts/Unbounded-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 
 * {
@@ -75,4 +75,58 @@
   border: none;
   text-align: center;
   font-display: swap;
+  font-size: 10px;
+}
+
+.h1-bold {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.h2-bold {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.h3-regular {
+  font-weight: 400;
+  font-size: 16px;
+}
+.h3-medium {
+  font-weight: 500;
+  font-size: 16px;
+}
+.h3-semibold {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.h4-regular {
+  font-weight: 400;
+  font-size: 13px;
+}
+.h4-medium {
+  font-weight: 500;
+  font-size: 13px;
+}
+.h4-semibold {
+  font-size: 600;
+  font-size: 13px;
+}
+
+.h5-regular {
+  font-weight: 400;
+  font-size: 10px;
+}
+.h5-medium {
+  font-weight: 500;
+  font-size: 10px;
+}
+.h6-regular {
+  font-size: 9px;
+  font-weight: 400;
+}
+.h7-regular {
+  font-size: 8px;
+  font-weight: 400;
 }

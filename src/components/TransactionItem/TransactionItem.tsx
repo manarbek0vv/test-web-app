@@ -27,7 +27,7 @@ const TransactionItem: FC<TransactionItemProps> = ({ transaction }) => {
             </div>
 
             <div className={classes.content}>
-                <span className={classes.title}>
+                <span className={[classes.title, 'h4-semibold'].join(' ')}>
                     {isReplenishment ? 'Пополнение' : 'Вывод'}
                     <div className={classes.status}>
                         {transaction.status === 'success' && (
@@ -41,7 +41,7 @@ const TransactionItem: FC<TransactionItemProps> = ({ transaction }) => {
                         )}
                     </div>
                 </span>
-                <span className={classes.time}>{transaction.time}</span>
+                <span className={[classes.time, 'h5-regular'].join(' ')}>{transaction.time}</span>
             </div>
 
             <div
@@ -52,6 +52,7 @@ const TransactionItem: FC<TransactionItemProps> = ({ transaction }) => {
                         : isReplenishment
                             ? classes.green
                             : classes.red,
+                    'h4-medium'
                 ].join(' ')}
             >
                 {isReplenishment ? '+ ' : '– '}

@@ -17,11 +17,11 @@ const navigationItems = [
 ]
 
 const Navigation = () => {
-
+    const navHeight = `${Telegram.WebApp.safeAreaInset.bottom > 0 ? 86 : 65}px`
     return (
         createPortal(
             <div className={classes.wrapper}>
-                <div className={classes.container}>
+                <div style={{height: navHeight}} className={classes.container}>
                     {navigationItems.map(({ title, Icon }) =>
                         <div key={title} className={classes.item}>
                             <div className={classes['icon-wrapper']}>
