@@ -1,60 +1,92 @@
-import { useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import classes from './Filter.module.scss';
-import checkboxMark from '/src/assets/icons/checkbox-mark.svg';
 import glass from '/src/assets/icons/glass.svg';
 import close from '/src/assets/icons/x-icon.svg';
+import { useFoldingGesture } from '../hooks/useFolding';
+import { CSSTransition } from 'react-transition-group';
+import './Filter.transition.scss';
+import FilterList from '../FilterList/FilterList';
 
 const filters = ['Пополнение', 'Вывод', 'Ставка в игре', "Выплата за игру", 'Комиссия', 'Транзакция отменена', 'Реферальная система', 'Промокод'];
 
-const Filter = ({ setOpen }: { setOpen: React.Dispatch<React.SetStateAction<boolean>> }) => {
+interface FilterProps {
+    isOpen: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Filter: FC<FilterProps> = ({ isOpen, setOpen }) => {
     const [activeFilters, setActiveFilters] = useState<string[]>([]);
     const [value, setValue] = useState('');
+    const screenRef = useRef(null)
 
-    const changeActive = (val: string) => {
-        const isExists = activeFilters.includes(val);
-        if (isExists) setActiveFilters(prev => prev.filter(i => i !== val));
-        else setActiveFilters(prev => [...prev, val]);
-    }
+    const { translateY, isDragging, handleStart } = useFoldingGesture(100, () => setOpen(false));
 
     const searchedFilters = filters.filter(item => item.includes(value));
 
     return (
-        <div className={classes.screen}>
-            <div className={classes.container}>
-                <div className={classes.header}>
-                    <span className={[classes.title, 'h3-medium'].join(' ')}>Фильтры</span>
-                    <img onClick={() => setOpen(prev => !prev)} src={close} className={classes.close} alt="" />
-                </div>
-
-                <div className={classes.search}>
-                    <div className={classes['glass-wrapper']}>
-                        <img src={glass} className={classes.glass} alt="" />
-                    </div>
-                    <input value={value} onChange={(e) => setValue(e.target.value)} id='filter' placeholder='Поиск' className={[classes.input, 'h4-regular'].join(' ')} />
-                </div>
-
-                <div className={classes.list}>
-                    {searchedFilters.map(item => {
-                        const isActive = activeFilters.includes(item);
-
-                        return <label className={classes.filter}>
-                            <div className={[classes.checkbox, isActive && classes.active].join(' ')}>
-                                {isActive && <img src={checkboxMark} alt="" />}
-                                <input onChange={() => changeActive(item)} checked={isActive} type="checkbox" className={classes['input']} />
+        <CSSTransition
+            classNames="backdrop"
+            nodeRef={screenRef}
+            in={isOpen}
+            timeout={300}
+            mountOnEnter
+            unmountOnExit>
+            <div ref={screenRef} className={classes.screen}>
+                <div className='filter-wrapper'>
+                    <div
+                        style={{
+                            transform: `translateY(${translateY}px)`,
+                            transition: !isDragging.current ? 'transform 200ms ease-out' : ''
+                        }}
+                        className={classes.container}
+                    >
+                        <div className={classes.header}>
+                            <div className={classes.slider}>
+                                <div
+                                    className={classes.use}
+                                    onTouchStart={handleStart}
+                                    onMouseDown={handleStart}
+                                />
                             </div>
+                            <span className={[classes.title, 'h3-medium'].join(' ')}>Фильтры</span>
+                            <img
+                                onClick={() => setOpen(prev => !prev)}
+                                src={close}
+                                className={classes.close} alt="" />
+                        </div>
 
-                            <span className={[classes.desc, 'h4-regular'].join(' ')}>{item}</span>
-                        </label>
-                    }
-                    )}
-                </div>
+                        <div className={classes.search}>
+                            <div className={classes['glass-wrapper']}>
+                                <img src={glass} className={classes.glass} alt="" />
+                            </div>
+                            <input
+                                value={value}
+                                onChange={(e) => setValue(e.target.value)}
+                                id='filter'
+                                placeholder='Поиск'
+                                className={[classes.input, 'h4-regular'].join(' ')}
+                            />
+                        </div>
 
-                <div className={classes.buttons}>
-                    <div onClick={() => setActiveFilters([])} className={[classes.button, classes.gray, 'h4-semibold'].join(' ')}>Clear all</div>
-                    <div className={[classes.button, classes.yellow, 'h4-semibold'].join(' ')}>Use filters ({ activeFilters.length })</div>
+                        <FilterList
+                            activeFilters={activeFilters}
+                            searchedFilters={searchedFilters}
+                            setActiveFilters={setActiveFilters} />
+
+                        <div className={classes.buttons}>
+                            <div
+                                onClick={() => setActiveFilters([])}
+                                className={[classes.button, classes.gray, 'h4-semibold'].join(' ')}>
+                                Clear all
+                            </div>
+                            <div className={[classes.button, classes.yellow, 'h4-semibold'].join(' ')}>
+                                Use filters ({activeFilters.length})
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </CSSTransition>
     )
 }
 

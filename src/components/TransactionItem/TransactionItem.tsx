@@ -41,7 +41,9 @@ const TransactionItem: FC<TransactionItemProps> = ({ transaction }) => {
                         )}
                     </div>
                 </span>
-                <span className={[classes.time, 'h5-regular'].join(' ')}>{transaction.time}</span>
+                <span className={[classes.time, 'h5-regular'].join(' ')}>
+                    {transaction.time}
+                </span>
             </div>
 
             <div

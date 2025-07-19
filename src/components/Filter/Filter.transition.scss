@@ -1,0 +1,35 @@
+.backdrop-enter {
+    opacity: 0;
+
+    .filter-wrapper {
+        transform: translateY(611px);
+    }
+}
+
+.backdrop-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease;
+
+    .filter-wrapper {
+        transform: translateY(0);
+        transition: transform 300ms ease;
+    }
+}
+
+.backdrop-exit {
+    opacity: 1;
+
+    .filter-wrapper {
+        transform: translateY(0);
+    }
+}
+
+.backdrop-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    .filter-wrapper {
+        transform: translateY(611px);
+        transition: transform 300ms ease;
+    }
+}

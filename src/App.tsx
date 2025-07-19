@@ -7,6 +7,7 @@ function App() {
 
   useEffect(() => {
     Telegram.WebApp.requestFullscreen();
+    Telegram.WebApp.disableVerticalSwipes();
   }, [])
 
   return (

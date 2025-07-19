@@ -8,6 +8,12 @@
     align-items: flex-end;
     z-index: 20;
     justify-content: center;
+    touch-action: none;
+}
+
+.wrapper {
+    max-height: 611px;
+    height: 100%;
 }
 
 .container {
@@ -26,9 +32,26 @@
         flex-shrink: 0;
         height: 37px;
         display: flex;
-        align-items: flex-end;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
         position: relative;
+
+        .slider {
+            height: 4px;
+            width: 140px;
+            position: relative;
+            border-radius: 1000px;
+            background-color: $third-background;
+
+            .use {
+                position: absolute;
+                inset: 0;
+                box-sizing: content-box;
+                padding: 10px;
+                cursor: grab;
+            }
+        }
 
         .title {
             color: $white-text;
@@ -73,62 +96,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-    }
-
-    .list {
-        flex-grow: 1;
-        padding: 12px 0px;
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        gap: 4px;
-
-        &::-webkit-scrollbar {
-            width: 0;
-        }
-
-        -ms-overflow-style: none;
-
-        .filter {
-            padding: 8px 14px;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            gap: 13px;
-        }
-
-        .checkbox {
-            flex-shrink: 0;
-            flex-grow: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            border: 1px solid $white-text;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-
-            .input {
-                position: absolute;
-                inset: 0;
-                opacity: 0;
-            }
-        }
-
-        .active {
-            background-color: $white-text;
-        }
-
-        .desc {
-            flex-grow: 1;
-            flex-shrink: 1;
-            display: flex;
-            align-items: center;
-            text-align: start;
-            color: $white-text;
         }
     }
 }

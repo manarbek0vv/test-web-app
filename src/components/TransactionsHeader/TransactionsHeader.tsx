@@ -9,11 +9,21 @@ const TransactionsHeader = () => {
 
     return (
         <>
-            {isOpen && createPortal(<Filter setOpen={setOpen} />, document.getElementById('modal') as HTMLDivElement)}
+            {
+                createPortal(
+                    <Filter isOpen={isOpen} setOpen={setOpen} />,
+                    document.getElementById('modal') as HTMLElement
+                )
+            }
+
 
             <div className={classes.header}>
-                <span className={[classes.title, 'h3-semibold'].join(' ')}>История транзакций</span>
-                <div onClick={() => setOpen(prev => !prev)} className={[classes.filter, 'h5-regular'].join(' ')}>
+                <span className={[classes.title, 'h3-semibold'].join(' ')}>
+                    История транзакций
+                </span>
+                <div
+                    onClick={() => setOpen(prev => !prev)}
+                    className={[classes.filter, 'h5-regular'].join(' ')}>
                     Фильтры
                     <div className={classes.icon}>
                         <img src={arrowBottomIcon} alt="" />
