@@ -1,5 +1,5 @@
 import Balance from '../Balance/Balance';
-import TransactionsBlock from '../Transactions/Transactions';
+import TransactionsBlock from '../TransactionsBlock/TransactionsBlock';
 import classes from './Wallet.module.scss';
 
 const Wallet = () => {

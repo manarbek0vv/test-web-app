@@ -2,11 +2,14 @@
 
 .transactions {
     width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 22px;
-    padding: 26px 9px 40px 9px;
+    padding: 26px 9px;
+    margin-bottom: 36px;
     background-color: $container-background;
     border-radius: 20px;
     border: 1px solid $super-transparent-white;
+    overflow: hidden;
 }

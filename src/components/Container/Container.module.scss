@@ -4,7 +4,8 @@
     max-width: 390px;
     width: 100wv;
     background-color: $background;
-    min-height: 100vh;
+    height: 100vh;
     margin: auto;
     display: flex;
+    overflow: hidden;
 }

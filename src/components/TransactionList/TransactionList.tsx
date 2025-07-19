@@ -42,6 +42,11 @@ const TransactionList = () => {
                     <TransactionData key={data.date} data={data} />
                 )
             }
+            {
+                testData.map(data =>
+                    <TransactionData key={data.date} data={data} />
+                )
+            }
         </div>
     )
 }

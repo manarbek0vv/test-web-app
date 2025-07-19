@@ -1,6 +1,6 @@
 import TransactionsHeader from '../TransactionsHeader/TransactionsHeader';
 import TransactionList from '../TransactionList/TransactionList';
-import classes from './Transactions.module.scss';
+import classes from './TransactionsBlock.module.scss';
 
 const TransactionsBlock = () => {
 

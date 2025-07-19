@@ -17,6 +17,7 @@
 }
 
 .container {
+    touch-action: none;
     border-radius: 20px 20px 0 0;
     width: 390px;
     max-height: 611px;
@@ -45,16 +46,17 @@
             background-color: $third-background;
 
             .use {
-                position: absolute;
-                inset: 0;
+                position: relative;
                 box-sizing: content-box;
-                padding: 10px;
+                padding: 25px 20px;
                 cursor: grab;
+                top: -20px;
             }
         }
 
         .title {
             color: $white-text;
+            user-select: none;
         }
 
         .close {
